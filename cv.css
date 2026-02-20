@@ -1,0 +1,142 @@
+/* Diseño Profesional IT con Acento de Color y Foto (Optimizado para ATS y PDF A4) */
+
+:root {
+    --main-color: #0056b3; /* Azul profesional (el mismo de tu web) */
+    --text-color: #222;
+    --bg-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 850px; /* Ancho optimizado para contener la foto */
+    padding: 30px 40px;
+    background-color: var(--bg-color);
+}
+
+/* --- REGLAS DE IMPRESIÓN --- */
+@media print {
+    body { padding: 0; }
+    @page { margin: 1.5cm 2cm; }
+    a { text-decoration: none; color: var(--main-color); }
+    /* Al imprimir, forzamos que los colores de fondo se vean (para el botón) */
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* --- TIPOGRAFÍA Y COLOR --- */
+h1 { 
+    font-size: 26pt; 
+    margin: 0 0 10px 0;
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    color: var(--main-color); /* Color de acento */
+}
+
+h2 { 
+    font-size: 14pt; 
+    border-bottom: 2px solid var(--main-color); /* Línea azul más gruesa */
+    padding-bottom: 5px; 
+    margin-top: 25px; 
+    margin-bottom: 15px; 
+    text-transform: uppercase;
+    color: var(--main-color); /* Color de acento */
+    font-weight: bold;
+}
+
+h3 { 
+    font-size: 11pt; 
+    margin: 0; 
+    display: inline-block;
+    font-weight: bold;
+}
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+
+/* --- ENCABEZADO CON FOTO --- */
+.main-header {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Espacio entre foto y texto */
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.photo-container {
+    flex-shrink: 0; /* Evita que la foto se aplaste */
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Hace la foto redonda */
+    object-fit: cover;
+    border: 3px solid var(--main-color); /* Borde azul elegante */
+}
+
+.header-details {
+    flex-grow: 1;
+}
+
+.contact-info { 
+    font-size: 10.5pt; 
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* --- BOTÓN DESTACADO MEJORADO --- */
+.link-portafolio-destacado {
+    display: inline-block;
+    background-color: var(--main-color);
+    color: white !important; /* Texto blanco forzado */
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 11pt;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.link-portafolio-destacado:hover {
+    background-color: #004494; /* Azul un poco más oscuro al pasar el mouse */
+    text-decoration: none;
+}
+
+/* --- RESTO DEL CONTENIDO --- */
+.date-location { 
+    float: right; 
+    font-size: 10pt; 
+    color: #555; /* Gris para que no compita con el título */
+    font-style: italic;
+}
+
+p, li { 
+    font-size: 11pt; 
+    margin-top: 5px; 
+    margin-bottom: 8px; 
+    text-align: justify; 
+}
+
+ul { 
+    margin-top: 5px; 
+    margin-bottom: 15px; 
+    padding-left: 20px; 
+}
+
+.skills strong { 
+    color: var(--main-color); /* Destacamos las categorías de habilidades */
+}
+
+/* Utilidades */
+.item-container { margin-bottom: 5px; }
+.clearfix::after { content: ""; clear: both; display: table; }
